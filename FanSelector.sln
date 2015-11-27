@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Api", "FanSelector.Api\FanSelector.Api.csproj", "{B91302A0-0D85-4FF4-8397-78D15A09AF1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Api.Tests", "FanSelector.Api.Tests\FanSelector.Api.Tests.csproj", "{6DCE8534-60D5-4295-9390-5AFF99460594}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{4A75BCFB-D09E-45A6-9621-5978426CB78C}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{0B4046CF-F835-49C5-851F-CCEFD4387679}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\FanSelectorApi-WAWS-dev.json = PublishScripts\Configurations\FanSelectorApi-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Data", "FanSelector.Data\FanSelector.Data.csproj", "{3F072D38-A638-4F20-B73C-1BC2885D6754}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Data.CommandService", "FanSelector.Data.CommandService\FanSelector.Data.CommandService.csproj", "{E9791CDA-6796-4858-82FB-FFB75020CDCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Data.QueryService", "FanSelector.Data.QueryService\FanSelector.Data.QueryService.csproj", "{8248116C-53B3-4C69-BADB-4E4821F54112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Models", "FanSelector.Models\FanSelector.Models.csproj", "{BE5BB319-B84A-4F62-80CB-7D89862342D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Data.Core", "FanSelector.Data.Core\FanSelector.Data.Core.csproj", "{A586C6A3-EA9E-46FB-99C8-9B64A8425265}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Core", "FanSelector.Core\FanSelector.Core.csproj", "{676A68AE-354B-493A-861E-C4379BDE5C60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B91302A0-0D85-4FF4-8397-78D15A09AF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B91302A0-0D85-4FF4-8397-78D15A09AF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B91302A0-0D85-4FF4-8397-78D15A09AF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B91302A0-0D85-4FF4-8397-78D15A09AF1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DCE8534-60D5-4295-9390-5AFF99460594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DCE8534-60D5-4295-9390-5AFF99460594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DCE8534-60D5-4295-9390-5AFF99460594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DCE8534-60D5-4295-9390-5AFF99460594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F072D38-A638-4F20-B73C-1BC2885D6754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F072D38-A638-4F20-B73C-1BC2885D6754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F072D38-A638-4F20-B73C-1BC2885D6754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F072D38-A638-4F20-B73C-1BC2885D6754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9791CDA-6796-4858-82FB-FFB75020CDCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9791CDA-6796-4858-82FB-FFB75020CDCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9791CDA-6796-4858-82FB-FFB75020CDCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9791CDA-6796-4858-82FB-FFB75020CDCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8248116C-53B3-4C69-BADB-4E4821F54112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8248116C-53B3-4C69-BADB-4E4821F54112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8248116C-53B3-4C69-BADB-4E4821F54112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8248116C-53B3-4C69-BADB-4E4821F54112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE5BB319-B84A-4F62-80CB-7D89862342D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE5BB319-B84A-4F62-80CB-7D89862342D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE5BB319-B84A-4F62-80CB-7D89862342D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE5BB319-B84A-4F62-80CB-7D89862342D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A586C6A3-EA9E-46FB-99C8-9B64A8425265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A586C6A3-EA9E-46FB-99C8-9B64A8425265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A586C6A3-EA9E-46FB-99C8-9B64A8425265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A586C6A3-EA9E-46FB-99C8-9B64A8425265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{676A68AE-354B-493A-861E-C4379BDE5C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{676A68AE-354B-493A-861E-C4379BDE5C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{676A68AE-354B-493A-861E-C4379BDE5C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{676A68AE-354B-493A-861E-C4379BDE5C60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0B4046CF-F835-49C5-851F-CCEFD4387679} = {4A75BCFB-D09E-45A6-9621-5978426CB78C}
+	EndGlobalSection
+EndGlobal

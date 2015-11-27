@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A586C6A3-EA9E-46FB-99C8-9B64A8425265}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FanSelector.Data.Core</RootNamespace>
+    <AssemblyName>FanSelector.Data.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandler\Appointment\CreatePatientAppointmentCommandHandler.cs" />
+    <Compile Include="CommandHandler\Appointment\UpdatePatientAppointmentCommandHandler.cs" />
+    <Compile Include="CommandHandler\Patient\CreatePatientProfileCommandHandler.cs" />
+    <Compile Include="Command\Appointment\CreatePatientAppointmentCommand.cs" />
+    <Compile Include="Command\Appointment\DeletePatientAppointmentCommand.cs" />
+    <Compile Include="Command\Appointment\UpdatePatientAppointmentCommand.cs" />
+    <Compile Include="Command\Patient\CreatePatientProfileCommand.cs" />
+    <Compile Include="Command\Patient\UpdatePatientProfileCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryHandler\Appointment\AppointmentQueryHandler.cs" />
+    <Compile Include="QueryHandler\Appointment\AppointmentsQueryHandler.cs" />
+    <Compile Include="QueryHandler\List\StateQueryHandler.cs" />
+    <Compile Include="QueryHandler\Patient\PatientProfileQueryHandler.cs" />
+    <Compile Include="QueryHandler\Patient\PatientProfilesQueryHandler.cs" />
+    <Compile Include="QueryResult\Appointment\AppointmentQueryResult.cs" />
+    <Compile Include="QueryResult\Appointment\AppointmentsQueryResult.cs" />
+    <Compile Include="QueryResult\BaseQueryResult.cs" />
+    <Compile Include="QueryResult\List\StateQueryResult.cs" />
+    <Compile Include="QueryResult\Patient\PatientProfileQueryResult.cs" />
+    <Compile Include="QueryResult\Patient\PatientProfilesQueryResult.cs" />
+    <Compile Include="Query\BaseByIdQuery.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FanSelector.Core\FanSelector.Core.csproj">
+      <Project>{676a68ae-354b-493a-861e-c4379bde5c60}</Project>
+      <Name>FanSelector.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
