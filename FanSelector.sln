@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{0B4046CF-F835-49C5-851F-CCEFD4387679}"
 	ProjectSection(SolutionItems) = preProject
 		PublishScripts\Configurations\FanSelectorApi-WAWS-dev.json = PublishScripts\Configurations\FanSelectorApi-WAWS-dev.json
+		PublishScripts\Configurations\FanSelectorWeb-WAWS-dev.json = PublishScripts\Configurations\FanSelectorWeb-WAWS-dev.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Data", "FanSelector.Data\FanSelector.Data.csproj", "{3F072D38-A638-4F20-B73C-1BC2885D6754}"
@@ -29,6 +30,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Data.Core", "FanSelector.Data.Core\FanSelector.Data.Core.csproj", "{A586C6A3-EA9E-46FB-99C8-9B64A8425265}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Core", "FanSelector.Core\FanSelector.Core.csproj", "{676A68AE-354B-493A-861E-C4379BDE5C60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanSelector.Web", "FanSelector.Web\FanSelector.Web.csproj", "{60AA9A02-927E-40F2-B1F2-C0BD5CDA785E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +71,10 @@ Global
 		{676A68AE-354B-493A-861E-C4379BDE5C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{676A68AE-354B-493A-861E-C4379BDE5C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{676A68AE-354B-493A-861E-C4379BDE5C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60AA9A02-927E-40F2-B1F2-C0BD5CDA785E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60AA9A02-927E-40F2-B1F2-C0BD5CDA785E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60AA9A02-927E-40F2-B1F2-C0BD5CDA785E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60AA9A02-927E-40F2-B1F2-C0BD5CDA785E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
