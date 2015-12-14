@@ -39,10 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IContestRepository.cs" />
+    <Compile Include="Impl\ContestRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Impl\" />
+    <ProjectReference Include="..\FanSelector.Core\FanSelector.Core.csproj">
+      <Project>{676A68AE-354B-493A-861E-C4379BDE5C60}</Project>
+      <Name>FanSelector.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FanSelector.Data\FanSelector.Data.csproj">
+      <Project>{3f072d38-a638-4f20-b73c-1bc2885d6754}</Project>
+      <Name>FanSelector.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FanSelector.Models\FanSelector.Models.csproj">
+      <Project>{be5bb319-b84a-4f62-80cb-7d89862342d6}</Project>
+      <Name>FanSelector.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
