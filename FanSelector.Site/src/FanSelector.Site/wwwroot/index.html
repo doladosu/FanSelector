@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html ng-app="fanSelectorApp">
+<head>
+    <title>FanSelector</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Content/bootstrap.css" rel="stylesheet"/>
+    <link href="Content/animations.css" rel="stylesheet"/>
+    <link href="Content/styles.css" rel="stylesheet"/>
+</head>
+<body ng-cloak>
+
+<header class="navbar navbar-inner navbar-fixed-top" ng-controller="NavbarController as vm">
+    <nav class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="vm.isCollapsed = !vm.isCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">
+                <img src="Content/images/people.png" alt="logo">
+                <span class="appTitle">{{ vm.appTitle }}</span>
+            </a>
+        </div>
+        <div class="nav-container" data-uib-collapse="isCollapsed">
+
+            <!-- With menu-highlighter directive -->
+            <ul class="nav navbar-nav nav-pills navBarPadding"
+                menu-highlighter highlight-class-name="active">
+                <li><a href="#/customers">Customers</a></li>
+                <li><a href="#/orders">Orders</a></li>
+                <li><a href="#/about">About</a></li>
+                <li id="nav-login" ng-click="vm.loginOrOut()">
+                    <!-- href not used but needed to compare against path in menu-highlighter -->
+                    <a data-href="#/login">{{ vm.loginLogoutText }}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="slide-animation-container">
+    <div ng-view id="ng-view" class="slide-animation"></div>
+</div>
+
+<div id="footer">
+    <div class="navbar navbar-fixed-bottom">
+        <div class="navbar-inner footer">
+            <div class="container">
+                <footer>
+                    <div class="row">
+                        <div class="col-md-12">
+                            Created by <a href="#" target="_blank">FanSelector</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div wc-overlay wc-overlay-delay="300">
+    <br/><img src="Content/images/spinner.gif"/>&nbsp;&nbsp;Loading
+</div>
+
+<!-- 3rd party libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.1/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="app/wc.directives/directives/wcOverlay.js"></script>
+<script src="app/wc.directives/directives/menuHighlighter.js"></script>
+<script src="app/fanSelectorApp/app.js"></script>
+<script src="app/fanSelectorApp/animations/listAnimations.js"></script>
+<script src="app/fanSelectorApp/directives/wcUnique.js"></script>
+<script src="app/fanSelectorApp/filters/nameCityStateFilter.js"></script>
+<script src="app/fanSelectorApp/filters/nameProductFilter.js"></script>
+<script src="app/fanSelectorApp/services/config.js"></script>
+<script src="app/fanSelectorApp/services/authService.js"></script>
+<script src="app/fanSelectorApp/services/httpInterceptors.js"></script>
+<script src="app/fanSelectorApp/services/customersService.js"></script>
+<script src="app/fanSelectorApp/services/dataService.js"></script>
+<!--<script src="app/fanSelectorApp/services/contestsService.js"></script>
+<script src="app/fanSelectorApp/services/accountService.js"></script>-->
+<script src="app/fanSelectorApp/services/modalService.js"></script>
+<script src="app/fanSelectorApp/controllers/customers/customerEditController.js"></script>
+<script src="app/fanSelectorApp/controllers/customers/customerOrdersController.js"></script>
+<script src="app/fanSelectorApp/controllers/customers/customersController.js"></script>
+<script src="app/fanSelectorApp/controllers/orders/orderChildController.js"></script>
+<script src="app/fanSelectorApp/controllers/orders/ordersController.js"></script>
+<script src="app/fanSelectorApp/controllers/aboutController.js"></script>
+<script src="app/fanSelectorApp/controllers/navbarController.js"></script>
+<script src="app/fanSelectorApp/controllers/loginController.js"></script>
+<!--<script src="app/fanSelectorApp/controllers/contests/ContestController.js"></script>
+<script src="app/fanSelectorApp/controllers/contests/DraftController.js"></script>
+<script src="app/fanSelectorApp/controllers/contests/LobbyController.js"></script>
+<script src="app/fanSelectorApp/controllers/account/ProfileController.js"></script>
+<script src="app/fanSelectorApp/controllers/account/TransactionController.js"></script>-->
+</body>
+</html>
