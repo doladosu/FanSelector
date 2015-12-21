@@ -18,6 +18,16 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/signup.html"
     });
 
+    $routeProvider.when("/lobby", {
+      controller: "lobbyController",
+      templateUrl: "/app/views/lobby.html"
+    });
+
+    $routeProvider.when("/draft", {
+      controller: "draftController",
+      templateUrl: "/app/views/draft.html"
+    });
+
     $routeProvider.when("/orders", {
         controller: "ordersController",
         templateUrl: "/app/views/orders.html"
@@ -42,8 +52,8 @@ app.config(function ($routeProvider) {
 
 });
 
-//var serviceBase = 'http://localhost:26264/';
-var serviceBase = 'http://ngauthenticationapi.azurewebsites.net/';
+//var serviceBase = 'http://localhost:7519/';
+var serviceBase = 'http://fanselectorapi.azurewebsites.net/';
 app.constant('ngAuthSettings', {
     apiServiceBaseUri: serviceBase,
     clientId: 'ngAuthApp'

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
+using System.Web.Http.Filters;
+using FanSelector.Api.Setup;
+using FanSelector.Api.Setup.Core;
 using Microsoft.Owin.Security.OAuth;
-using Newtonsoft.Json.Serialization;
 
 namespace FanSelector.Api
 {
@@ -12,6 +10,12 @@ namespace FanSelector.Api
     {
         public static void Register(HttpConfiguration config)
         {
+            // Web API configuration and services
+            RegisterFilters(config.Filters);
+
+            // Web API configuration and services
+            RegisterModelBinders();
+
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
@@ -26,5 +30,17 @@ namespace FanSelector.Api
                 defaults: new { id = RouteParameter.Optional }
             );
         }
+
+        private static void RegisterModelBinders()
+        {
+            // http://stackoverflow.com/questions/21180321/webapi-actions-with-multiple-complex-types-one-of-which-is-injected-with-a-filt
+            GlobalConfiguration.Configuration.BindParameter(typeof(ILoggedInPerson), new NoOpModelBinder());
+        }
+
+        private static void RegisterFilters(HttpFilterCollection filters)
+        {
+            filters.Add(new PersonActionParameterAttribute());
+        }
+
     }
 }

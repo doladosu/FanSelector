@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,20 +56,36 @@
     <Compile Include="QueryHandler\Appointment\AppointmentsQueryHandler.cs" />
     <Compile Include="QueryHandler\List\StateQueryHandler.cs" />
     <Compile Include="QueryHandler\Patient\PatientProfileQueryHandler.cs" />
-    <Compile Include="QueryHandler\Patient\PatientProfilesQueryHandler.cs" />
+    <Compile Include="QueryHandler\Contest\ContestQueryHandler.cs" />
     <Compile Include="QueryResult\Appointment\AppointmentQueryResult.cs" />
     <Compile Include="QueryResult\Appointment\AppointmentsQueryResult.cs" />
     <Compile Include="QueryResult\BaseQueryResult.cs" />
     <Compile Include="QueryResult\List\StateQueryResult.cs" />
     <Compile Include="QueryResult\Patient\PatientProfileQueryResult.cs" />
-    <Compile Include="QueryResult\Patient\PatientProfilesQueryResult.cs" />
+    <Compile Include="QueryResult\Contest\ContestQueryResult.cs" />
     <Compile Include="Query\BaseByIdQuery.cs" />
+    <Compile Include="Query\ContestsQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FanSelector.Core\FanSelector.Core.csproj">
       <Project>{676a68ae-354b-493a-861e-c4379bde5c60}</Project>
       <Name>FanSelector.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FanSelector.Data.QueryService\FanSelector.Data.QueryService.csproj">
+      <Project>{8248116C-53B3-4C69-BADB-4E4821F54112}</Project>
+      <Name>FanSelector.Data.QueryService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FanSelector.Data\FanSelector.Data.csproj">
+      <Project>{3F072D38-A638-4F20-B73C-1BC2885D6754}</Project>
+      <Name>FanSelector.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FanSelector.Models\FanSelector.Models.csproj">
+      <Project>{be5bb319-b84a-4f62-80cb-7d89862342d6}</Project>
+      <Name>FanSelector.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

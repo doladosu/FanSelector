@@ -87,6 +87,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\controllers\lobbyController.js" />
+    <Content Include="app\controllers\draftController.js" />
+    <Content Include="app\services\lobbyService.js" />
+    <Content Include="app\services\draftService.js" />
+    <Content Include="app\views\draft.html" />
+    <Content Include="app\views\lobby.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
