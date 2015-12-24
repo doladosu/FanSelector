@@ -4,10 +4,10 @@
 
     var NavbarController = function ($scope, $location, config, authService) {
         var vm = this,
-            appTitle = 'Customer Management';
+            appTitle = 'FanSelector';
 
         vm.isCollapsed = false;
-        vm.appTitle = (config.useBreeze) ? appTitle + ' Breeze' : appTitle;
+        vm.appTitle = appTitle;
 
         vm.highlight = function (path) {
             return $location.path().substr(0, path.length) === path;
