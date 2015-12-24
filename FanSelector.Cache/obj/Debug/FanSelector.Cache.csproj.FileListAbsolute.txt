@@ -1,0 +1,10 @@
+C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\bin\Debug\FanSelector.Cache.dll
+C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\bin\Debug\FanSelector.Cache.pdb
+C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\bin\Debug\Newtonsoft.Json.dll
+C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\bin\Debug\StackExchange.Redis.dll
+C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\bin\Debug\Newtonsoft.Json.xml
+C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\bin\Debug\StackExchange.Redis.pdb
+C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\bin\Debug\StackExchange.Redis.xml
+C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\obj\Debug\FanSelector.Cache.csprojResolveAssemblyReference.cache
+C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\obj\Debug\FanSelector.Cache.dll
+C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\obj\Debug\FanSelector.Cache.pdb
