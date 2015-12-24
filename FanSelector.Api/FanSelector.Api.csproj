@@ -261,9 +261,9 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Providers\SimpleRefreshTokenProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Setup\Core\ApiTimedEvent.cs" />
     <Compile Include="Setup\Core\CustomOkResult.cs" />
@@ -348,6 +348,10 @@
     <ProjectReference Include="..\FanSelector.Data.Core\FanSelector.Data.Core.csproj">
       <Project>{A586C6A3-EA9E-46FB-99C8-9B64A8425265}</Project>
       <Name>FanSelector.Data.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FanSelector.Data\FanSelector.Data.csproj">
+      <Project>{3F072D38-A638-4F20-B73C-1BC2885D6754}</Project>
+      <Name>FanSelector.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\FanSelector.Models\FanSelector.Models.csproj">
       <Project>{BE5BB319-B84A-4F62-80CB-7D89862342D6}</Project>

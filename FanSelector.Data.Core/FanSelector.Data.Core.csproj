@@ -64,7 +64,6 @@
     <Compile Include="QueryResult\Patient\PatientProfileQueryResult.cs" />
     <Compile Include="QueryResult\Contest\ContestQueryResult.cs" />
     <Compile Include="Query\BaseByIdQuery.cs" />
-    <Compile Include="Query\ContestsQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FanSelector.Core\FanSelector.Core.csproj">
@@ -85,6 +84,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FanSelector.Core;
@@ -23,7 +24,8 @@ namespace FanSelector.Data.Core.QueryHandler.Contest
             var allData = await _contestRepository.GetAllContests();
             var result = new ContestQueryResult
             {
-                Contests = Mapper.Map<IEnumerable<Contests>>(allData)
+                Contests = Mapper.Map<IEnumerable<Contests>>(allData),
+                TotalRecords = allData.Count()
             };
             return result;
         }

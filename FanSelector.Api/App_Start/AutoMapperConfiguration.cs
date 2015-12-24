@@ -7,7 +7,7 @@ namespace FanSelector.Api
     {
         public static void Setup()
         {
-            Mapper.CreateMap<Contests, FanSelector.Models.Output.Contests>();
+            Mapper.CreateMap<Contest, FanSelector.Models.Output.Contests>().ReverseMap();
         }
     }
 }

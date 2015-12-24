@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,7 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Db\Contests.cs" />
+    <Compile Include="Db\ApplicationType.cs" />
+    <Compile Include="Db\AspNetRole.cs" />
+    <Compile Include="Db\AspNetUser.cs" />
+    <Compile Include="Db\AspNetUserClaim.cs" />
+    <Compile Include="Db\AspNetUserLogin.cs" />
+    <Compile Include="Db\Client.cs" />
+    <Compile Include="Db\Contest.cs" />
+    <Compile Include="Db\RefreshToken.cs" />
     <Compile Include="Output\Contests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

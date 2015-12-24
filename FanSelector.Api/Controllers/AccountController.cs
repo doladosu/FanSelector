@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using FanSelector.Api.Models;
 using FanSelector.Api.Providers;
 using FanSelector.Api.Results;
+using FanSelector.Data.Auth;
 
 namespace FanSelector.Api.Controllers
 {
@@ -264,8 +265,8 @@ namespace FanSelector.Api.Controllers
                 ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
                     CookieAuthenticationDefaults.AuthenticationType);
 
-                AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName);
-                Authentication.SignIn(properties, oAuthIdentity, cookieIdentity);
+               // AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName);
+                //Authentication.SignIn(properties, oAuthIdentity, cookieIdentity);
             }
             else
             {

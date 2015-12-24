@@ -1,11 +1,14 @@
-﻿using System;
+using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace FanSelector.Models.Output
+namespace FanSelector.Models.Db
 {
-    public class Contests
+    public partial class Contest
     {
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(250)]
         public string Name { get; set; }
 
         public long Prizes { get; set; }
