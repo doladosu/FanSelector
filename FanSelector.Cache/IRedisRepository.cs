@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace FanSelector.Cache
 {
@@ -10,7 +9,6 @@ namespace FanSelector.Cache
         Task<T> Get<T>(string key) where T : class;
 
         Task<bool> Remove(string key);
-
 
         Task<bool> Exists(string key);
     }

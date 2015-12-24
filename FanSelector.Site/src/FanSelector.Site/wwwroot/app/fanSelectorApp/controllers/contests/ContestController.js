@@ -1,17 +1,17 @@
 ﻿(function () {
 
     var injectParams = ['$location', '$filter', '$window',
-                        '$timeout', 'authService', 'dataService', 'modalService'];
+                        '$timeout', 'authService', 'contestsService', 'modalService'];
 
     var contestController = function ($location, $filter, $window,
-        $timeout, authService, dataService, modalService) {
+        $timeout, authService, contestsService, modalService) {
 
         var vm = this;
 
-        vm.customers = [];
-        vm.filteredCustomers = [];
+        vm.contests = [];
+        vm.filteredcontests = [];
         vm.filteredCount = 0;
-        vm.orderby = 'lastName';
+        vm.orderby = 'contestDate';
         vm.reverse = false;
         vm.searchText = null;
         vm.cardAnimationClass = '.card-animation';
@@ -21,39 +21,34 @@
         vm.pageSize = 10;
         vm.currentPage = 1;
 
-        vm.pageChanged = function (page) {
-            vm.currentPage = page;
-            getCustomersSummary();
-        };
-
-        vm.deleteCustomer = function (id) {
+        vm.deletecontest = function (id) {
             if (!authService.user.isAuthenticated) {
                 $location.path(authService.loginPath + $location.$$path);
                 return;
             }
 
-            var cust = getCustomerById(id);
+            var cust = getcontestById(id);
             var custName = cust.firstName + ' ' + cust.lastName;
 
             var modalOptions = {
                 closeButtonText: 'Cancel',
-                actionButtonText: 'Delete Customer',
+                actionButtonText: 'Delete contest',
                 headerText: 'Delete ' + custName + '?',
-                bodyText: 'Are you sure you want to delete this customer?'
+                bodyText: 'Are you sure you want to delete this contest?'
             };
 
             modalService.showModal({}, modalOptions).then(function (result) {
                 if (result === 'ok') {
-                    dataService.deleteCustomer(id).then(function () {
-                        for (var i = 0; i < vm.customers.length; i++) {
-                            if (vm.customers[i].id === id) {
-                                vm.customers.splice(i, 1);
+                    contestsService.deletecontest(id).then(function () {
+                        for (var i = 0; i < vm.contests.length; i++) {
+                            if (vm.contests[i].id === id) {
+                                vm.contests.splice(i, 1);
                                 break;
                             }
                         }
-                        filterCustomers(vm.searchText);
+                        filtercontests(vm.searchText);
                     }, function (error) {
-                        $window.alert('Error deleting customer: ' + error.message);
+                        $window.alert('Error deleting contest: ' + error.message);
                     });
                 }
             });
@@ -87,49 +82,54 @@
         };
 
         vm.searchTextChanged = function () {
-            filterCustomers(vm.searchText);
+            filtercontests(vm.searchText);
+        };
+
+        function filtercontests(filterText) {
+          vm.filteredcontests = $filter("nameCityStateFilter")(vm.contests, filterText);
+          vm.filteredCount = vm.filteredcontests.length;
+        }
+
+        function getcontests() {
+          contestsService.getcontests(vm.currentPage - 1, vm.pageSize)
+          .then(function (data) {
+            vm.totalRecords = data.totalRecords;
+            vm.contests = data.results;
+            filtercontests(''); //Trigger initial filter
+
+            $timeout(function () {
+              vm.cardAnimationClass = ''; //Turn off animation since it won't keep up with filtering
+            }, 1000);
+
+          }, function (error) {
+            $window.alert('Sorry, an error occurred: ' + error.data.message);
+          });
+        }
+
+        vm.pageChanged = function (page) {
+          vm.currentPage = page;
+          getcontests();
         };
 
         function init() {
             //createWatches();
-            getCustomersSummary();
+            getcontests();
         }
 
         //function createWatches() {
-        //    //Watch searchText value and pass it and the customers to nameCityStateFilter
+        //    //Watch searchText value and pass it and the contests to nameCityStateFilter
         //    //Doing this instead of adding the filter to ng-repeat allows it to only be run once (rather than twice)
         //    //while also accessing the filtered count via vm.filteredCount above
 
         //    //Better to handle this using ng-change on <input>. See searchTextChanged() function.
         //    vm.$watch("searchText", function (filterText) {
-        //        filterCustomers(filterText);
+        //        filtercontests(filterText);
         //    });
         //}
 
-        function getCustomersSummary() {
-            dataService.getCustomersSummary(vm.currentPage - 1, vm.pageSize)
-            .then(function (data) {
-                vm.totalRecords = data.totalRecords;
-                vm.customers = data.results;
-                filterCustomers(''); //Trigger initial filter
-
-                $timeout(function () {
-                    vm.cardAnimationClass = ''; //Turn off animation since it won't keep up with filtering
-                }, 1000);
-
-            }, function (error) {
-                $window.alert('Sorry, an error occurred: ' + error.data.message);
-            });
-        }
-
-        function filterCustomers(filterText) {
-            vm.filteredCustomers = $filter("nameCityStateFilter")(vm.customers, filterText);
-            vm.filteredCount = vm.filteredCustomers.length;
-        }
-
-        function getCustomerById(id) {
-            for (var i = 0; i < vm.customers.length; i++) {
-                var cust = vm.customers[i];
+        function getcontestById(id) {
+            for (var i = 0; i < vm.contests.length; i++) {
+                var cust = vm.contests[i];
                 if (cust.id === id) {
                     return cust;
                 }
@@ -142,6 +142,6 @@
 
     contestController.$inject = injectParams;
 
-    angular.module('fanSelectorApp').controller('ContestController', contestController);
+    angular.module('fanSelectorApp').controller('ContestsController', contestController);
 
 }());

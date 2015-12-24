@@ -25,17 +25,21 @@
             </a>
         </div>
         <div class="nav-container" data-uib-collapse="isCollapsed">
-
             <!-- With menu-highlighter directive -->
-            <ul class="nav navbar-nav nav-pills navBarPadding"
-                menu-highlighter highlight-class-name="active">
-                <li><a href="#/customers">Customers</a></li>
-                <li><a href="#/orders">Orders</a></li>
-                <li><a href="#/about">About</a></li>
+            <ul class="nav navbar-nav nav-pills navBarPadding" menu-highlighter highlight-class-name="active">
+                <li data-ng-hide="!vm.isAuthenticated"><a href="#/lobby">Lobby</a></li>
+                <!--<li><a href="#/orders">Orders</a></li>
+                <li><a href="#/about">About</a></li>-->
+                <!--<li data-ng-hide="!vm.isAuthenticated">Welcome {{ vm.email }}</li>-->
                 <li id="nav-login" ng-click="vm.loginOrOut()">
                     <!-- href not used but needed to compare against path in menu-highlighter -->
                     <a data-href="#/login">{{ vm.loginLogoutText }}</a>
                 </li>
+                <li data-ng-hide="vm.isAuthenticated" id="nav-login" ng-click="vm.register()">
+                    <!-- href not used but needed to compare against path in menu-highlighter -->
+                    <a data-href="#/login">Register</a>
+                </li>
+
             </ul>
         </div>
     </nav>
@@ -74,9 +78,9 @@
 <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
 
 <!-- Custom scripts -->
-    <script src="lib/_app/fanselector.js"></script>
+    <!--<script src="lib/_app/fanselector.js"></script>-->
 
-<!--<script src="app/wc.directives/directives/wcOverlay.js"></script>
+<<script src="app/wc.directives/directives/wcOverlay.js"></script>
 <script src="app/wc.directives/directives/menuHighlighter.js"></script>
 <script src="app/fanSelectorApp/app.js"></script>
 <script src="app/fanSelectorApp/animations/listAnimations.js"></script>
@@ -103,6 +107,6 @@
 <script src="app/fanSelectorApp/controllers/contests/DraftController.js"></script>
 <script src="app/fanSelectorApp/controllers/contests/LobbyController.js"></script>
 <script src="app/fanSelectorApp/controllers/account/ProfileController.js"></script>
-<script src="app/fanSelectorApp/controllers/account/TransactionController.js"></script>-->
+<script src="app/fanSelectorApp/controllers/account/TransactionController.js"></script>
 </body>
 </html>

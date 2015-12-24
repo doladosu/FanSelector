@@ -16,13 +16,11 @@
         vm.loginOrOut = function () {
             setLoginLogoutText();
             var isAuthenticated = authService.user.isAuthenticated;
-            if (isAuthenticated) { //logout 
-                authService.logout().then(function () {
-                    $location.path('/');
-                    return;
-                });                
-            }
-            redirectToLogin();
+          if (isAuthenticated) { //logout 
+            authService.logout();
+            $location.path('/');
+          }
+          redirectToLogin();
         };
 
         function redirectToLogin() {
@@ -40,7 +38,9 @@
         });
 
         function setLoginLogoutText() {
-            vm.loginLogoutText = (authService.user.isAuthenticated) ? 'Logout' : 'Login';
+          vm.loginLogoutText = (authService.user.isAuthenticated) ? 'Logout' : 'Login';
+          vm.isAuthenticated = authService.user.isAuthenticated;
+          vm.email = authService.user.email;
         }
 
         setLoginLogoutText();

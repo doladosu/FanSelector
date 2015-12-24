@@ -7,10 +7,11 @@
         var viewBase = '/app/fanSelectorApp/views/';
 
         $routeProvider
-            .when('/customers', {
-                controller: 'CustomersController',
-                templateUrl: viewBase + 'customers/customers.html',
-                controllerAs: 'vm'
+            .when('/lobby', {
+              controller: 'LobbyController',
+                templateUrl: viewBase + 'contests/lobby.html',
+                controllerAs: 'vm',
+                secure: true
             })
             .when('/customerorders/:customerId', {
                 controller: 'CustomerOrdersController',
@@ -38,7 +39,7 @@
                 templateUrl: viewBase + 'login.html',
                 controllerAs: 'vm'
             })
-            .otherwise({ redirectTo: '/customers' });
+            .otherwise({ redirectTo: '/lobby' });
 
     }]);
 
