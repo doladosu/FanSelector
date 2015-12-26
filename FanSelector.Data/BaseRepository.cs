@@ -3,6 +3,8 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Threading.Tasks;
+using FanSelector.Cache;
+using FanSelector.Cache.Impl;
 using FanSelector.Data.Data;
 
 namespace FanSelector.Data
@@ -10,10 +12,12 @@ namespace FanSelector.Data
     public class BaseRepository
     {
         public readonly FsDataContext Db;
+        public IRedisRepository RedisRepository;
 
         public BaseRepository()
         {
             Db = new FsDataContext();
+            RedisRepository = new RedisRepository();
         }
 
         public async Task<int> SaveChangesAsyncTask()

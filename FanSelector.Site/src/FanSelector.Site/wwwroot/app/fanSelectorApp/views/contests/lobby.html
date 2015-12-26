@@ -41,7 +41,7 @@
                                 <td>{{contest.entryFee}}</td>
                                 <td>{{contest.prizes}}</td>
                                 <td>{{contest.size}}</td>
-                                <td><a class="btn btn-success" href="#/enterContest/{{contest.id}}">Enter</a></td>
+                                <td><a class="btn btn-success" href="#/contests/{{contest.id}}">Enter</a></td>
                             </tr>
                             </tbody>
                         </table>
@@ -49,8 +49,8 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row show-hide-animation" data-ng-show="vm.filteredcontests.length == 0">
+        <div class="container" data-ng-show="vm.noContest">
+            <div class="row show-hide-animation">
                 <div class="col-span-12">
                     <h4>No contests found</h4>
                 </div>

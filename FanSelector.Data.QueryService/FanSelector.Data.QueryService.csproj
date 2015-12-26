@@ -61,6 +61,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FanSelector.Cache\FanSelector.Cache.csproj">
+      <Project>{1b06a081-d56a-4a5c-a4ce-d5061ab53bca}</Project>
+      <Name>FanSelector.Cache</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FanSelector.Core\FanSelector.Core.csproj">
       <Project>{676A68AE-354B-493A-861E-C4379BDE5C60}</Project>
       <Name>FanSelector.Core</Name>

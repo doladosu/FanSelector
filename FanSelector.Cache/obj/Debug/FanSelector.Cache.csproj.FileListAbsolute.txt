@@ -8,3 +8,13 @@ C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.
 C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\obj\Debug\FanSelector.Cache.csprojResolveAssemblyReference.cache
 C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\obj\Debug\FanSelector.Cache.dll
 C:\Users\DOladosu\Documents\Visual Studio 2013\Projects\FanSelector\FanSelector.Cache\obj\Debug\FanSelector.Cache.pdb
+C:\git\FanSelector\FanSelector.Cache\bin\Debug\FanSelector.Cache.dll
+C:\git\FanSelector\FanSelector.Cache\bin\Debug\FanSelector.Cache.pdb
+C:\git\FanSelector\FanSelector.Cache\bin\Debug\Newtonsoft.Json.dll
+C:\git\FanSelector\FanSelector.Cache\bin\Debug\StackExchange.Redis.dll
+C:\git\FanSelector\FanSelector.Cache\bin\Debug\Newtonsoft.Json.xml
+C:\git\FanSelector\FanSelector.Cache\bin\Debug\StackExchange.Redis.pdb
+C:\git\FanSelector\FanSelector.Cache\bin\Debug\StackExchange.Redis.xml
+C:\git\FanSelector\FanSelector.Cache\obj\Debug\FanSelector.Cache.csprojResolveAssemblyReference.cache
+C:\git\FanSelector\FanSelector.Cache\obj\Debug\FanSelector.Cache.dll
+C:\git\FanSelector\FanSelector.Cache\obj\Debug\FanSelector.Cache.pdb

@@ -103,6 +103,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FanSelector.Cache\FanSelector.Cache.csproj">
+      <Project>{1B06A081-D56A-4A5C-A4CE-D5061AB53BCA}</Project>
+      <Name>FanSelector.Cache</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FanSelector.Models\FanSelector.Models.csproj">
       <Project>{be5bb319-b84a-4f62-80cb-7d89862342d6}</Project>
       <Name>FanSelector.Models</Name>

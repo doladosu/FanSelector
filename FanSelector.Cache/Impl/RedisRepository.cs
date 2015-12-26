@@ -12,7 +12,7 @@ namespace FanSelector.Cache.Impl
             new Lazy<ConnectionMultiplexer>(
                 () =>
                     ConnectionMultiplexer.Connect(
-                        "fsapp.redis._cache.windows.net,abortConnect=false,ssl=true,password=DOxvqvoNZPNR81d7oH/znYbfUCDPFftHToi5xgcY21g="));
+                        "fsapi.redis.cache.windows.net,abortConnect=false,ssl=true,password=DOxvqvoNZPNR81d7oH/znYbfUCDPFftHToi5xgcY21g="));
 
         public static ConnectionMultiplexer Connection => LazyConnection.Value;
         readonly IDatabase _cache = Connection.GetDatabase();
@@ -27,7 +27,10 @@ namespace FanSelector.Cache.Impl
         public async Task<T> Get<T>(string key) where T : class
         {
             var serializedObject = await _cache.StringGetAsync(key);
-
+            if (!serializedObject.HasValue)
+            {
+                return null;
+            }
             return JsonConvert.DeserializeObject<T>(serializedObject);
         }
 
