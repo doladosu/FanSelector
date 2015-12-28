@@ -572,9 +572,14 @@
             <param name="contestEntry"></param>
             <returns></returns>
         </member>
+        <member name="T:FanSelector.Api.Controllers.ListController">
+            <summary>
+            List API endpoints class
+            </summary>
+        </member>
         <member name="M:FanSelector.Api.Controllers.ListController.#ctor(FanSelector.Core.ICommandDispatcher,FanSelector.Core.IQueryDispatcher)">
             <summary>
-            
+            List API endpoints class declaration
             </summary>
             <param name="commandDispatcher"></param>
             <param name="queryDispatcher"></param>
@@ -583,6 +588,15 @@
             <summary>
             Gets all List.States
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FanSelector.Api.Controllers.ListController.GetPlayersTask(FanSelector.Api.Setup.Core.ILoggedInPerson,System.Int32,System.String)">
+            <summary>
+            Get player information
+            </summary>
+            <param name="loggedInPerson"></param>
+            <param name="playerId"></param>
+            <param name="playerName"></param>
             <returns></returns>
         </member>
         <member name="T:FanSelector.Api.Setup.Core.CustomOkResult`1">

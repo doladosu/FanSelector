@@ -6,7 +6,7 @@ namespace FanSelector.Core
     /// Passed around to all allow dispatching a query and to be mocked by unit tests
     /// </summary>
     public interface IQueryDispatcher
-    {   
+    {
         /// <summary>
         /// Dispatches a query and retrieves a query result
         /// </summary>

@@ -31,7 +31,7 @@ namespace FanSelector.Core
             where TParameter : IQuery
             where TResult : IQueryResult
         {
-            var handler =  _kernel.Get<IQueryHandler<TParameter, TResult>>();
+            var handler = _kernel.Get<IQueryHandler<TParameter, TResult>>();
             return await handler.Retrieve(query);
         }
     }
