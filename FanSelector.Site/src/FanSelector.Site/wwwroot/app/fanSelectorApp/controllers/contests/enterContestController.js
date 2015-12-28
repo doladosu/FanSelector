@@ -6,10 +6,11 @@
     var enterContestController = function ($scope, $location, $routeParams,
                                            $timeout, config, dataService, modalService) {
 
-        var vm = this,
-            id = ($routeParams.id) ? parseInt($routeParams.id) : 0,
-            timer,
-            onRouteChangeOff;
+      var vm = this,
+          id = ($routeParams.id) ? parseInt($routeParams.id) : 0,
+          timer,
+          onRouteChangeOff,
+          hub = $.connection.contests;
 
         vm.customer = {};
         vm.states = [];
@@ -17,6 +18,10 @@
         vm.updateStatus = false;
         vm.errorMessage = '';
 
+
+        hub.enteredContest = function (item) {
+
+        };
 
         function init() {
 
