@@ -503,6 +503,60 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:FanSelector.Api.Controllers.BaseApiControllerHub`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="THub"></typeparam>
+        </member>
+        <member name="P:FanSelector.Api.Controllers.BaseApiControllerHub`1.Hub">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:FanSelector.Api.Controllers.BaseApiControllerHub`1.ClientIpAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:FanSelector.Api.Controllers.BaseApiControllerHub`1.QueryDispatcher">
+            <summary>
+            IQueryDispatcher for all queries
+            </summary>
+        </member>
+        <member name="F:FanSelector.Api.Controllers.BaseApiControllerHub`1.CommandDispatcher">
+            <summary>
+            ICommandDispatcher for all commands
+            </summary>
+        </member>
+        <member name="M:FanSelector.Api.Controllers.BaseApiControllerHub`1.#ctor(FanSelector.Core.ICommandDispatcher,FanSelector.Core.IQueryDispatcher)">
+            <summary>
+            BaseApiController declaration, takes IQueryDispatcher and ICommandDispatcher as params
+            </summary>
+            <param name="commandDispatcher"></param>
+            <param name="queryDispatcher"></param>
+        </member>
+        <member name="M:FanSelector.Api.Controllers.BaseApiControllerHub`1.TryAsync(System.Func{System.Threading.Tasks.Task{System.Web.Http.IHttpActionResult}},System.String,System.String,System.Int32,System.Object[])">
+            <summary>
+            Wraps a controller action in a try/catch and returns the appropriate <c>IHttpActionResult</c>.
+            </summary>
+            <param name="func"></param>
+            <param name="memberName"></param>
+            <param name="sourceFilePath"></param>
+            <param name="sourceLineNumber"></param>
+            <param name="memberParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FanSelector.Api.Controllers.BaseApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:FanSelector.Api.Controllers.BaseApiController.ClientIpAddress">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="F:FanSelector.Api.Controllers.BaseApiController.QueryDispatcher">
             <summary>
             IQueryDispatcher for all queries
@@ -598,6 +652,11 @@
             <param name="playerId"></param>
             <param name="playerName"></param>
             <returns></returns>
+        </member>
+        <member name="T:FanSelector.Api.Hubs.ContestsHub">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:FanSelector.Api.Setup.Core.CustomOkResult`1">
             <summary>

@@ -7,14 +7,26 @@ using System.Web;
 using System.Web.Http;
 using FanSelector.Api.Setup.Core;
 using FanSelector.Core;
+using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Hubs;
 
 namespace FanSelector.Api.Controllers
 {
     /// <summary>
     /// 
     /// </summary>
-    public class BaseApiController : ApiController
+    /// <typeparam name="THub"></typeparam>
+    public class BaseApiControllerHub<THub> : ApiController where THub : IHub
     {
+        Lazy<IHubContext> _hub = new Lazy<IHubContext>(
+           () => GlobalHost.ConnectionManager.GetHubContext<THub>()
+       );
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected IHubContext Hub => _hub.Value;
+
         /// <summary>
         /// 
         /// </summary>
@@ -35,7 +47,7 @@ namespace FanSelector.Api.Controllers
         /// </summary>
         /// <param name="commandDispatcher"></param>
         /// <param name="queryDispatcher"></param>
-        public BaseApiController(ICommandDispatcher commandDispatcher, IQueryDispatcher queryDispatcher)
+        public BaseApiControllerHub(ICommandDispatcher commandDispatcher, IQueryDispatcher queryDispatcher)
         {
             CommandDispatcher = commandDispatcher;
             QueryDispatcher = queryDispatcher;

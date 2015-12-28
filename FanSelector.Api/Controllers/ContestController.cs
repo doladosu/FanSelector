@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Http.OData;
+using FanSelector.Api.Hubs;
 using FanSelector.Api.Setup.Core;
 using FanSelector.Core;
 using FanSelector.Data.Core.Command.Contest;
@@ -18,7 +19,7 @@ namespace FanSelector.Api.Controllers
     /// </summary>
     [RoutePrefix("api/Contests")]
     [Authorize]
-    public class ContestController : BaseApiController
+    public class ContestController : BaseApiControllerHub<ContestsHub>
     {
         /// <summary>
         /// Contests API class declaration
@@ -87,6 +88,7 @@ namespace FanSelector.Api.Controllers
             {
                 var command = new EnterContestCommand { ContestEntry = contestEntry, UserId = loggedInPerson.Id };
                 var result = await CommandDispatcher.Dispatch(command);
+                Hub.Clients.All.enteredContest(contestEntry);
                 return Ok(result);
             }, memberParameters: new object[] { loggedInPerson, contestEntry });
         }
