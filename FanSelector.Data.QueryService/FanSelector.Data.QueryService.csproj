@@ -56,8 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IContestRepository.cs" />
-    <Compile Include="Impl\ContestRepository.cs" />
+    <Compile Include="IContestQueryRepository.cs" />
+    <Compile Include="IListQueryRepository.cs" />
+    <Compile Include="Impl\ContestQueryRepository.cs" />
+    <Compile Include="Impl\ListQueryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

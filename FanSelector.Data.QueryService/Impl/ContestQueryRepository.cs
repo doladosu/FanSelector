@@ -5,7 +5,7 @@ using FanSelector.Models.Db;
 
 namespace FanSelector.Data.QueryService.Impl
 {
-    public class ContestRepository : BaseRepository, IContestRepository
+    public class ContestQueryRepository : BaseRepository, IContestQueryRepository
     {
         private const string ContestsKey = "contests";
 

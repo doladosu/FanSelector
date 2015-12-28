@@ -34,6 +34,10 @@
       <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FluentValidation, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.0.0.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,10 +49,12 @@
   <ItemGroup>
     <Compile Include="CommandHandler\Appointment\CreatePatientAppointmentCommandHandler.cs" />
     <Compile Include="CommandHandler\Appointment\UpdatePatientAppointmentCommandHandler.cs" />
+    <Compile Include="CommandHandler\Contest\EnterContestCommandHandler.cs" />
     <Compile Include="CommandHandler\Patient\CreatePatientProfileCommandHandler.cs" />
     <Compile Include="Command\Appointment\CreatePatientAppointmentCommand.cs" />
     <Compile Include="Command\Appointment\DeletePatientAppointmentCommand.cs" />
     <Compile Include="Command\Appointment\UpdatePatientAppointmentCommand.cs" />
+    <Compile Include="Command\Contest\EnterContestCommand.cs" />
     <Compile Include="Command\Patient\CreatePatientProfileCommand.cs" />
     <Compile Include="Command\Patient\UpdatePatientProfileCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +75,10 @@
     <ProjectReference Include="..\FanSelector.Core\FanSelector.Core.csproj">
       <Project>{676a68ae-354b-493a-861e-c4379bde5c60}</Project>
       <Name>FanSelector.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FanSelector.Data.CommandService\FanSelector.Data.CommandService.csproj">
+      <Project>{e9791cda-6796-4858-82fb-ffb75020cdcf}</Project>
+      <Name>FanSelector.Data.CommandService</Name>
     </ProjectReference>
     <ProjectReference Include="..\FanSelector.Data.QueryService\FanSelector.Data.QueryService.csproj">
       <Project>{8248116C-53B3-4C69-BADB-4E4821F54112}</Project>
