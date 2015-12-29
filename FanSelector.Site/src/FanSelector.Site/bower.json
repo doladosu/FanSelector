@@ -8,6 +8,6 @@
         "angular-ui-bootstrap-bower": "~0.14.3",
         "angular-local-storage": "~0.2.2",
         "greensock": "~1.14.2",
-        "signalr": "*"
+        "signalr": "~2.2.0"
     }
 }
