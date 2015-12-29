@@ -10,6 +10,10 @@ namespace FanSelector.Site
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR(options =>
+                                {
+                                    options.Hubs.EnableDetailedErrors = true;
+                                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -17,6 +21,7 @@ namespace FanSelector.Site
         {
             app.UseDefaultFiles();
             app.UseStaticFiles();
+            app.UseSignalR();
         }
 
         // Entry point for the application.
