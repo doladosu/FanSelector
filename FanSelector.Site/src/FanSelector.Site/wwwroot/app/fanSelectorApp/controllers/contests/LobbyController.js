@@ -1,14 +1,20 @@
 ﻿(function() {
 
   var injectParams = [
-    '$location', '$filter', '$window',
-    'authService', 'contestsService'
+    '$scope', '$location', '$filter', '$window', 'authService', 'contestsService', 'signalRSvc'
   ];
 
-  var lobbyController = function($location, $filter, $window,
-    authService, contestsService) {
+  var lobbyController = function ($scope, $location, $filter, $window, authService, contestsService, signalRSvc) {
 
     var vm = this;
+
+    signalRSvc.initialize();
+
+    $scope.$parent.$on("enteredContest", function (e, message) {
+      $scope.$apply(function () {
+        console.log(message);
+      });
+    });
 
     vm.contests = [];
     vm.filteredcontests = [];
