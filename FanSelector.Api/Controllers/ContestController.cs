@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.Description;
-using System.Web.Http.OData;
-using FanSelector.Api.Hubs;
+﻿using FanSelector.Api.Hubs;
 using FanSelector.Api.Setup.Core;
 using FanSelector.Core;
 using FanSelector.Data.Core.Command.Contest;
@@ -11,6 +6,11 @@ using FanSelector.Data.Core.Query;
 using FanSelector.Data.Core.QueryResult.Contest;
 using FanSelector.Models.Input;
 using FanSelector.Models.Output;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Http;
+using System.Web.Http.Description;
+using System.Web.Http.OData;
 
 namespace FanSelector.Api.Controllers
 {
@@ -48,8 +48,26 @@ namespace FanSelector.Api.Controllers
                 {
                     XInlineCount = result.TotalRecords.ToString()
                 };
-            }, memberParameters: new object[] {loggedInPerson});
+            }, memberParameters: new object[] { loggedInPerson });
         }
+
+        /// <summary>
+        /// Gets contest by Id.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("{id:int}")]
+        [ResponseType(typeof(Contests))]
+        public async Task<IHttpActionResult> GetContestByIdTask(ILoggedInPerson loggedInPerson, int id)
+        {
+            return await TryAsync(async () =>
+            {
+                var baseByIdQuery = new BaseByIdQuery { Id = id };
+                var result = await QueryDispatcher.Dispatch<BaseByIdQuery, ContestByIdQueryResult>(baseByIdQuery);
+                return Ok(result.Contest);
+            }, memberParameters: new object[] { loggedInPerson });
+        }
+
 
         /// <summary>
         /// Gets all contests entered by user

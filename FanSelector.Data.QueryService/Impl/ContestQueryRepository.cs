@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using FanSelector.Models.Db;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
-using FanSelector.Models.Db;
 
 namespace FanSelector.Data.QueryService.Impl
 {
@@ -16,6 +17,15 @@ namespace FanSelector.Data.QueryService.Impl
             contests = await Db.Contests.ToListAsync();
             await RedisRepository.Add(ContestsKey, contests);
             return contests;
+        }
+
+        public async Task<Contest> GetContestById(int id)
+        {
+            var contest = await RedisRepository.Get<Contest>(ContestsKey + id);
+            if (contest != null) return contest;
+            contest = await Db.Contests.Where(c => c.Id == id).FirstOrDefaultAsync();
+            await RedisRepository.Add(ContestsKey + id, contest);
+            return contest;
         }
     }
 }

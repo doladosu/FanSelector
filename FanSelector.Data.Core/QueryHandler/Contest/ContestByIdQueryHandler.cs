@@ -10,26 +10,25 @@ using System.Threading.Tasks;
 
 namespace FanSelector.Data.Core.QueryHandler.Contest
 {
-    public class ContestQueryHandler : IQueryHandler<BaseByIdQuery, ContestQueryResult>
+    public class ContestByIdQueryHandler : IQueryHandler<BaseByIdQuery, ContestByIdQueryResult>
     {
         private readonly IContestQueryRepository _contestRepository;
 
-        public ContestQueryHandler(IContestQueryRepository contestRepository)
+        public ContestByIdQueryHandler(IContestQueryRepository contestRepository)
         {
             _contestRepository = contestRepository;
         }
 
-        public async Task<ContestQueryResult> Retrieve(BaseByIdQuery query)
+        public async Task<ContestByIdQueryResult> Retrieve(BaseByIdQuery query)
         {
             var allData = await _contestRepository.GetAllContests();
             if (!string.IsNullOrEmpty(query.UserId))
             {
                 //Get data from Contest entry table and map to Contests record
             }
-            var result = new ContestQueryResult
+            var result = new ContestByIdQueryResult
             {
-                Contests = Mapper.Map<IEnumerable<Contests>>(allData),
-                TotalRecords = allData.Count()
+                Contest = Mapper.Map<Contests>(allData),
             };
             return result;
         }

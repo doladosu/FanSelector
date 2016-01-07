@@ -614,6 +614,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:FanSelector.Api.Controllers.ContestController.GetContestByIdTask(FanSelector.Api.Setup.Core.ILoggedInPerson,System.Int32)">
+            <summary>
+            Gets contest by Id.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:FanSelector.Api.Controllers.ContestController.GetContestsForUserTask(FanSelector.Api.Setup.Core.ILoggedInPerson)">
             <summary>
             Gets all contests entered by user
