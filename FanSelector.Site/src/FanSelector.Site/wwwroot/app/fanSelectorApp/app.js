@@ -41,6 +41,16 @@
           templateUrl: viewBase + 'about.html',
           controllerAs: 'vm'
         })
+        .when('/rules', {
+              controller: 'RulesController',
+              templateUrl: viewBase + 'rules.html',
+              controllerAs: 'vm'
+        })
+        .when('/howitworks', {
+          controller: 'HowController',
+          templateUrl: viewBase + 'howitworks.html',
+          controllerAs: 'vm'
+        })
         .when('/register', {
           controller: 'RegisterController',
           templateUrl: viewBase + 'register.html',

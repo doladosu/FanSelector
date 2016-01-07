@@ -14,6 +14,8 @@ namespace FanSelector.Models.Output
 
         public int Size { get; set; }
 
+        public int Entries { get; set; }
+
         public DateTime ContestDate { get; set; }
     }
 }

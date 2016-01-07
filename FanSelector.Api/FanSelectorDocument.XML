@@ -26,6 +26,17 @@
             </summary>
             <param name="kernel">The kernel.</param>
         </member>
+        <member name="T:FanSelector.Api.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FanSelector.Api.Startup.Configuration(Owin.IAppBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
         <member name="M:FanSelector.Api.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
             <summary>
             Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
