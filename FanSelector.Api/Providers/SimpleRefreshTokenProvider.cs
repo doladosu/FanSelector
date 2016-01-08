@@ -8,18 +8,16 @@ using Microsoft.Owin.Security.Infrastructure;
 
 namespace FanSelector.Api.Providers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SimpleRefreshTokenProvider : IAuthenticationTokenProvider
     {
-        public void Create(AuthenticationTokenCreateContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Receive(AuthenticationTokenReceiveContext context)
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task CreateAsync(AuthenticationTokenCreateContext context)
         {
             var clientid = context.Ticket.Properties.Dictionary["as:client_id"];
@@ -59,6 +57,11 @@ namespace FanSelector.Api.Providers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task ReceiveAsync(AuthenticationTokenReceiveContext context)
         {
 
@@ -79,10 +82,38 @@ namespace FanSelector.Api.Providers
                 }
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        public void Create(AuthenticationTokenCreateContext context)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        public void Receive(AuthenticationTokenReceiveContext context)
+        {
+            throw new NotImplementedException();
+        }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Helper
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static string GetHash(string input)
         {
             var hashAlgorithm = new SHA256CryptoServiceProvider();

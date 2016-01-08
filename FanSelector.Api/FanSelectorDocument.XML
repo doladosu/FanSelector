@@ -31,6 +31,22 @@
             
             </summary>
         </member>
+        <member name="P:FanSelector.Api.Startup.OAuthOptions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:FanSelector.Api.Startup.PublicClientId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FanSelector.Api.Startup.ConfigureAuth(Owin.IAppBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
         <member name="M:FanSelector.Api.Startup.Configuration(Owin.IAppBuilder)">
             <summary>
             
@@ -674,6 +690,99 @@
             <summary>
             
             </summary>
+        </member>
+        <member name="T:FanSelector.Api.Providers.ApplicationOAuthProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FanSelector.Api.Providers.ApplicationOAuthProvider.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="publicClientId"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:FanSelector.Api.Providers.ApplicationOAuthProvider.GrantResourceOwnerCredentials(Microsoft.Owin.Security.OAuth.OAuthGrantResourceOwnerCredentialsContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FanSelector.Api.Providers.ApplicationOAuthProvider.TokenEndpoint(Microsoft.Owin.Security.OAuth.OAuthTokenEndpointContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FanSelector.Api.Providers.ApplicationOAuthProvider.ValidateClientAuthentication(Microsoft.Owin.Security.OAuth.OAuthValidateClientAuthenticationContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FanSelector.Api.Providers.ApplicationOAuthProvider.ValidateClientRedirectUri(Microsoft.Owin.Security.OAuth.OAuthValidateClientRedirectUriContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FanSelector.Api.Providers.ApplicationOAuthProvider.CreateProperties(System.String,Microsoft.Owin.Security.OAuth.OAuthGrantResourceOwnerCredentialsContext)">
+            <summary>
+            
+            </summary>
+            <param name="userName"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FanSelector.Api.Providers.SimpleRefreshTokenProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FanSelector.Api.Providers.SimpleRefreshTokenProvider.CreateAsync(Microsoft.Owin.Security.Infrastructure.AuthenticationTokenCreateContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FanSelector.Api.Providers.SimpleRefreshTokenProvider.ReceiveAsync(Microsoft.Owin.Security.Infrastructure.AuthenticationTokenReceiveContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FanSelector.Api.Providers.SimpleRefreshTokenProvider.Create(Microsoft.Owin.Security.Infrastructure.AuthenticationTokenCreateContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:FanSelector.Api.Providers.SimpleRefreshTokenProvider.Receive(Microsoft.Owin.Security.Infrastructure.AuthenticationTokenReceiveContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:FanSelector.Api.Providers.Helper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FanSelector.Api.Providers.Helper.GetHash(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
         </member>
         <member name="T:FanSelector.Api.Setup.Core.CustomOkResult`1">
             <summary>

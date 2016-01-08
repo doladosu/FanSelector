@@ -22,7 +22,7 @@
 
       var deferred = $q.defer();
 
-      $http.post(serviceBase + 'api/account/register', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+      $http.post(serviceBase + 'account/register', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
         deferred.resolve(response);
         factory.login(email, password);
       }).error(function (err, status) {
@@ -38,7 +38,7 @@
 
       var deferred = $q.defer();
 
-      $http.post(serviceBase + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function(response) {
+      $http.post(serviceBase + 'login', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function(response) {
 
         localStorageService.set('authorizationData', { token: response.access_token, email: email, refreshToken: response.refresh_token, useRefreshTokens: true });
         var loggedIn = response.access_token !== '';

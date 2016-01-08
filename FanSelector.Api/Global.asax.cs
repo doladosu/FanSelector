@@ -1,14 +1,20 @@
-﻿using System.Web;
+﻿using Newtonsoft.Json.Serialization;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Newtonsoft.Json.Serialization;
 
 namespace FanSelector.Api
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class WebApiApplication : HttpApplication
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();

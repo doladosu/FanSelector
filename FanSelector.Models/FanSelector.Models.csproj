@@ -48,15 +48,14 @@
     <Compile Include="Db\Client.cs" />
     <Compile Include="Db\Contest.cs" />
     <Compile Include="Db\RefreshToken.cs" />
+    <Compile Include="Enum\ApplicationTypes.cs" />
     <Compile Include="Input\ContestEntry.cs" />
     <Compile Include="Input\Player.cs" />
     <Compile Include="Output\Contests.cs" />
     <Compile Include="Output\State.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enum\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

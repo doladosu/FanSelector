@@ -2,7 +2,7 @@
   var injectParams = ['$http', '$q', 'config'];
 
   var contestsFactory = function ($http, $q, config) {
-    var serviceBase = config.serviceBase + 'api/',
+    var serviceBase = config.serviceBase,
         factory = {};
 
     // is this still used???
@@ -97,11 +97,11 @@
       });
     };
 
-    factory.getCustomer = function (id) {
+    factory.getContest = function (id) {
       //then does not unwrap data so must go through .data property
       //success unwraps data automatically (no need to call .data property)
-      return $http.get(serviceBase + 'customerById/' + id).then(function (results) {
-        extendcontests([results.data]);
+      return $http.get(serviceBase + 'Contests/' + id).then(function (results) {
+        //extendcontests([results.data]);
         return results.data;
       });
     };

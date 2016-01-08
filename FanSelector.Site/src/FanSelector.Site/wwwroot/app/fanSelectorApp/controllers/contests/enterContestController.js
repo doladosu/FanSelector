@@ -1,12 +1,12 @@
 ﻿(function() {
 
     var injectParams = [
-        '$scope', '$location', '$routeParams', '$rootScope',
-        '$timeout', 'config', 'dataService', 'modalService', 'signalRSvc'
+        '$scope', '$location', '$routeParams',
+        'config', 'modalService', 'signalRSvc', 'contestsService'
     ];
 
-    var enterContestController = function($scope, $location, $routeParams, $rootScope,
-        $timeout, config, dataService, modalService, signalRSvc) {
+    var enterContestController = function($scope, $location, $routeParams,
+        config, modalService, signalRSvc, contestsService) {
 
         var vm = this,
             id = ($routeParams.id) ? parseInt($routeParams.id) : 0,
@@ -35,8 +35,17 @@
             });
         });
 
-        function init() {
+        function getContest() {
+            contestsService.getContest(vm.id)
+            .then(function (data) {
+                vm.contest = data.results;
+            }, function (error) {
+                $window.alert('Sorry, an error occurred: ' + error.data.message);
+            });
+        }
 
+        function init() {
+            getContest();
             //Make sure they're warned if they made a change but didn't save it
             //Call to $on returns a "deregistration" function that can be called to
             //remove the listener (see routeChange() for an example of using it)

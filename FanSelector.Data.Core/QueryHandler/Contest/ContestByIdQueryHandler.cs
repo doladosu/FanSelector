@@ -4,8 +4,6 @@ using FanSelector.Data.Core.Query;
 using FanSelector.Data.Core.QueryResult.Contest;
 using FanSelector.Data.QueryService;
 using FanSelector.Models.Output;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace FanSelector.Data.Core.QueryHandler.Contest
